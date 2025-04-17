@@ -13,7 +13,7 @@ cloudinary.config({
 
 exports.create = async (req, res) => {
     try {
-        // code
+        
         const { title, description, price, quantity, categoryId, images } = req.body
         // console.log(title, description, price, quantity, images)
         const product = await prisma.product.create({
@@ -41,7 +41,7 @@ exports.create = async (req, res) => {
 }
 exports.list = async (req, res) => {
     try {
-        // code
+        
         const { count } = req.params
         const products = await prisma.product.findMany({
             take: parseInt(count),
@@ -59,7 +59,7 @@ exports.list = async (req, res) => {
 }
 exports.read = async (req, res) => {
     try {
-        // code
+        
         const { id } = req.params
         const products = await prisma.product.findFirst({
             where: {
@@ -78,7 +78,7 @@ exports.read = async (req, res) => {
 }
 exports.update = async (req, res) => {
     try {
-        // code
+        
         const { title, description, price, quantity, categoryId, images } = req.body
         // console.log(title, description, price, quantity, images)
 
@@ -116,7 +116,7 @@ exports.update = async (req, res) => {
 }
 exports.remove = async (req, res) => {
     try {
-        // code
+        
         const { id } = req.params
         // หนังชีวิต 
         // Step 1 ค้นหาสินค้า include images
@@ -155,7 +155,7 @@ exports.remove = async (req, res) => {
 }
 exports.listby = async (req, res) => {
     try {
-        // code
+        
         const { sort, order, limit } = req.body
         console.log(sort, order, limit)
         const products = await prisma.product.findMany({
@@ -240,7 +240,7 @@ const handleCategory = async (req, res, categoryId) => {
 
 exports.searchFilters = async (req, res) => {
     try {
-        // code
+        
         const { query, category, price } = req.body
 
         if (query) {

@@ -18,7 +18,7 @@ readdirSync('./routes')
 
 // Step 3 Router
 // app.post('/api',(req,res)=>{
-//     // code
+//     
 //     const { username,password } = req.body
 //     console.log(username,password)
 //     res.send('Jukkru 555+')

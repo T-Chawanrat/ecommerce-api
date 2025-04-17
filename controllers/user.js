@@ -64,12 +64,12 @@ exports.userCart = async (req, res) => {
 
     // Check quantity
     for (const item of cart) {
-      // console.log(item)
+      
       const product = await prisma.product.findUnique({
         where: { id: item.id },
         select: { quantity: true, title: true },
       });
-      // console.log(item)
+      
       // console.log(product)
       if (!product || item.count > product.quantity) {
         return res.status(400).json({
